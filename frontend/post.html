@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Create a New Post</h1>
+        <form id="create-post-form">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" required><br>
+
+            <label for="content">Content:</label><br>
+            <textarea id="content" name="content" rows="4" cols="50"></textarea><br>
+
+            <label for="image-url">Image URL:</label><br>
+            <input type="text" id="image-url" name="image-url"><br>
+
+            <label>Post Type:</label><br>
+            <input type="radio" id="question" name="post-type" value="question">
+            <label for="question">Question</label><br>
+            <input type="radio" id="opinion" name="post-type" value="opinion">
+            <label for="opinion">Opinion</label><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('create-post-form').addEventListener('submit', async(event) => {
+            event.preventDefault();
+
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+            const imageUrl = document.getElementById('image-url').value;
+
+            try {
+                const response = await fetch('/api/posts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        title,
+                        content,
+                        imageUrl
+                    })
+                });
+
+                const data = await response.json();
+                console.log(data); // Log the response from the server
+                alert("Post created successfully");
+            } catch (error) {
+                console.error('Error:', error);
+                alert("Failed to create post");
+            }
+        });
+    </script>
+</body>
+
+</html>
