@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Forum</h1>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search posts.......">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <div class="container">
+        <div id="sort-buttons">
+            <button id="sort-by-year">Sort by Time</button>
+
+            <button id="sort-by-upvotes">Sort by Upvotes</button>
+
+            <button id="reset-button">Reset</button>
+
+            <a href="post.html">
+                <button>Create new post!</button>
+            </a>
+
+            <a href="upload.html">
+                <button>Upload an Image!</button>
+            </a>
+
+        </div>
+        <div id="post-list" class="grid-container"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

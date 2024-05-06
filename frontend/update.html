@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Post</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+
+<body>
+    <h1>Update Post</h1>
+    <form id="update-post-form">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br>
+
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" rows="4" cols="50"></textarea><br>
+
+        <label for="image-url">Image URL:</label><br>
+        <input type="text" id="image-url" name="image-url"><br>
+
+        <input type="submit" value="Update">
+    </form>
+
+    <!-- HTML -->
+    <div id="spinner" style="display: none;">
+        <!-- Your spinner HTML content here -->
+        <!-- For example, you can use a simple animated GIF -->
+        <img src="spinner.gif" class="spinner" alt="Loading...">
+    </div>
+
+
+    <script src="scripts/update.js"></script>
+</body>
+
+</html>
